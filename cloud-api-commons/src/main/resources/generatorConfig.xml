@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!--location="/Users/greggao/.m2/repository/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar"/>-->
+<generatorConfiguration>
+    <classPathEntry
+            location="D:/maven/repository/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar"/>
+            <!--location="C:/Users/高严/.m2/repository/mysql/mysql-connector-java-5.1.46.jar"/>-->
+            <!--location="C:/Users/Administrator/.IntelliJIdea2017.3/config/jdbc-drivers/MySQL Connector/J/5.1.46/mysql-connector-java-5.1.46.jar"/>-->
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- jdbc连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.1.114:3306/mysql" userId="root"
+                        password="anxin521."/>
+
+
+        <javaModelGenerator targetPackage="com.lykj.springcloud.dao"
+                            targetProject="E:/code/server/springcloud2022/cloud-api-commons/src/main/java">
+                            <!--targetProject="F:/00project/zjb/code/server/data2.0/data20/src/main/java">-->
+            <!--targetProject="F:/00project/zjb/code/server/data2.0/zjb1/src/main/java">-->
+            <!--targetProject="G:/00project/01zjb/code/server/src/main/java">-->
+            <!--targetProject="G:/00project/03fangpu/javaCode/fangpuall/fangpuall/src/main/java"-->
+            <!--targetProject="/Users/goying/project/fangpu/javaCode/fangpu/src/main/java">-->
+            <!--targetProject="G:/00project/03fangpu/javaCode/fangpu/src/main/java">-->
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="resources.mapper"
+                         targetProject="E:/code/server/springcloud2022/cloud-api-commons/src/main">
+            <!--targetProject="F:/00project/zjb/code/server/data2.0/zjb1/src/main">-->
+            <!--targetProject="G:/00project/01zjb/code/server/src/main">-->
+            <!--targetProject="G:/00project/03fangpu/javaCode/fangpuall/fangpuall/src/main"-->
+            <!--targetProject="/Users/goying/project/fangpu/javaCode/fangpu/src/main">-->
+            <!--targetProject="G:/00project/03fangpu/javaCode/fangpu/src/main">-->
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.renchaigao.zujuba.dao.mapper"
+                             targetProject="E:/code/server/springcloud2022/cloud-provider-payment8001/src/main/java"
+                             type="XMLMAPPER">
+            <!--targetProject="F:/00project/zjb/code/server/data2.0/zjb1/src/main/java" type="XMLMAPPER">-->
+            <!--targetProject="G:/00project/01zjb/code/server/src/main/java" type="XMLMAPPER">-->
+            <!--targetProject="G:/00project/03fangpu/javaCode/fangpuall/fangpuall/src/main/java" type="XMLMAPPER">-->
+            <!--targetProject="/Users/goying/project/fangpu/javaCode/fangpu/src/main/java" type="XMLMAPPER">-->
+            <!--targetProject="G:/00project/03fangpu/javaCode/fangpu/src/main/java" type="XMLMAPPER">-->
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="payment" domainObjectName="Payment"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
+
+        <!--以下内容是组局吧data2.0-->
+
+        <!--1、function part-->
+        <!--<table tableName="address" domainObjectName="Address"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="permission" domainObjectName="Permission"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+
+    </context>
+</generatorConfiguration>
