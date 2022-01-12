@@ -1,6 +1,5 @@
 package com.lykj.springcloud.service.impl;
 
-import com.lykj.springcloud.dao.PaymentDao;
 import com.lykj.springcloud.entities.Payment;
 import com.lykj.springcloud.service.PaymentService;
 import org.springframework.stereotype.Service;
