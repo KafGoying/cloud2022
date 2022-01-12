@@ -32,7 +32,7 @@
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="resources.mapper"
-                         targetProject="E:/code/server/springcloud2022/cloud-api-commons/src/main">
+                         targetProject="E:/code/server/springcloud2022/cloud-provider-payment8001/src/main">
             <!--targetProject="F:/00project/zjb/code/server/data2.0/zjb1/src/main">-->
             <!--targetProject="G:/00project/01zjb/code/server/src/main">-->
             <!--targetProject="G:/00project/03fangpu/javaCode/fangpuall/fangpuall/src/main"-->
@@ -40,7 +40,7 @@
             <!--targetProject="G:/00project/03fangpu/javaCode/fangpu/src/main">-->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        <javaClientGenerator targetPackage="com.renchaigao.zujuba.dao.mapper"
+        <javaClientGenerator targetPackage="resources.mapper"
                              targetProject="E:/code/server/springcloud2022/cloud-provider-payment8001/src/main/java"
                              type="XMLMAPPER">
             <!--targetProject="F:/00project/zjb/code/server/data2.0/zjb1/src/main/java" type="XMLMAPPER">-->
