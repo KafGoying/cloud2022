@@ -28,7 +28,7 @@
         </commentGenerator>
         <!-- jdbc连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.1.114:3306/mysql?serverTimezone=UTC&useSSL=true"
+                        connectionURL="jdbc:mysql://192.168.1.114:3306/mysql?useUnicode=true&amp;characeterEncoding=utf-8&amp;serverTimezone=UTC"
                         userId="root"
                         password="anxin521."/>
 
@@ -67,10 +67,19 @@
           domainObjectName：生成的domain类的名字,当表名和domain类的名字有差异时一定要设置，
           如果不设置，直接使用表名作为domain类的名字；
           可以设置为somepck.domainName，那么会自动把domainName类再放到somepck包里面； -->
-        <table tableName="payment" domainObjectName="PaymentDao"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+        <table tableName="payment"
+               domainObjectName="PaymentDomain"
+               mapperName="PaymentMapper"
+               sqlProviderName="PaymentSQL"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true"
+               enableDeleteByExample="true"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               selectByExampleQueryId="true">
             <property name="useActualColumnNames" value="true"/>
         </table>
 
