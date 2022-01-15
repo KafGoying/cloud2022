@@ -31,7 +31,7 @@ import java.util.Properties;
  * @since: 2020/4/2
  */
 @Configuration
-@MapperScan(basePackages = "cn.lykj.springcloud.dao",
+@MapperScan(basePackages = "com.lykj.springcloud.dao",
         sqlSessionTemplateRef = "accountCenterSqlSessionTemplate")
 public class MybatisConfig {
 

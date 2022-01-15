@@ -1,5 +1,7 @@
 package com.lykj.springcloud.service.impl;
 
+import com.lykj.springcloud.dao.PaymentMapper;
+import com.lykj.springcloud.entities.PaymentDomain;
 import com.lykj.springcloud.service.PaymentService;
 import org.springframework.stereotype.Service;
 
@@ -9,15 +11,15 @@ import javax.annotation.Resource;
 public class PaymentServiceImpl implements PaymentService {
 
     @Resource
-    private PaymentDaoMapper paymentDaoMapper;
+    private PaymentMapper paymentDaoMapper;
 
     @Override
-    public int create(PaymentDao paymentDao) {
-        return paymentDaoMapper.insert(paymentDao);
+    public int create(PaymentDomain payment) {
+        return paymentDaoMapper.insert(payment);
     }
 
     @Override
-    public PaymentDao getPaymentById(Long id) {
+    public PaymentDomain getPaymentById(Long id) {
         return paymentDaoMapper.selectByPrimaryKey(id);
     }
 }
