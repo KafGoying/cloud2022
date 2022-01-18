@@ -17,25 +17,25 @@
 
     <dependencies>
 
-        <!--引入自己的公共api-->
-        <dependency>
-            <groupId>com.lykj.springcloud</groupId>
-            <artifactId>cloud-api-commons</artifactId>
-            <scope>system</scope>
-            <version>${project.version}</version>
-            <systemPath>${project.basedir}/src/main/resources/libs/cloud-api-commons-1.0-SNAPSHOT.jar</systemPath>
-        </dependency>
+        <!--&lt;!&ndash;引入自己的公共api&ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>com.lykj.springcloud</groupId>-->
+        <!--<artifactId>cloud-api-commons</artifactId>-->
+        <!--<scope>system</scope>-->
+        <!--<version>${project.version}</version>-->
+        <!--<systemPath>${project.basedir}/src/main/resources/libs/cloud-api-commons-1.0-SNAPSHOT.jar</systemPath>-->
+        <!--</dependency>-->
 
         <!--包含了sleuth+zipkin-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
-        <!--eureka-client-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+        <!--&lt;!&ndash;eureka-client&ndash;&gt;-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -53,12 +53,17 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.22</version>
+        </dependency>
         <!--mysql-connector-java-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
-            <scope>runtime</scope>
+            <!--<scope>runtime</scope>-->
         </dependency>
         <!--jdbc-->
         <dependency>
@@ -103,6 +108,10 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
             <!--<version>${pagehelper.version}</version>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 

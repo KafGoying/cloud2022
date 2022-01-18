@@ -1,11 +1,10 @@
 package com.lykj.springcloud.service;
 
-import com.lykj.springcloud.dao.PaymentMapper;
-import com.lykj.springcloud.entities.PaymentDomain;
+import com.lykj.springcloud.entities.Payment;
 import org.apache.ibatis.annotations.Param;
 
 public interface PaymentService {
-    public int create(PaymentDomain payment);
+    public int create(Payment payment);
 
-    public PaymentDomain getPaymentById(@Param("id") Long id);
+    public Payment getPaymentById(@Param("id") Long id);
 }

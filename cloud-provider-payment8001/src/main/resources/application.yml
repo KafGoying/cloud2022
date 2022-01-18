@@ -4,17 +4,23 @@ server:
 spring:
   application:
     name: cloud-payment-service
+  zipkin:
+    # 放到 zipkin上
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样率介于0-1之间，1表示全部采集
+      probability: 1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-#    driver-class-name: org.mysql.jdbc.Driver              # mysql驱动包
+    #    driver-class-name: org.gjt.mm.mysql.Driver    #mysql驱动包
     driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
-#    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://192.168.1.114:3306/my?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.1.114:3306/mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: anxin521.
 
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+  mapperLocations: classpath:mappers/*.xml
   type-aliases-package: com.lykj.springcloud.entities    # 所有Entity别名类所在包
 
 
@@ -24,13 +30,22 @@ eureka:
     register-with-eureka: true
     #是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用 负载均衡
     fetch-registry: true
-    service-url:
-      #      defaultZone:  http://eureka7002.com:7002/eureka/,http://eureka7001.com:7001/eureka/
-      defaultZone:  http://eureka7001.com:7001/eureka/ # 单机版
-  instance:
-    instance-id: payment8001
-    prefer-ip-address: true
-#    #eureka客户端发送心跳的时间间隔，默认30s
-#    lease-renewal-interval-in-seconds: 1
-#    #eureka服务端在收到最后一次心跳等待的时间上线，默认90s
-#    lease-expiration-duration-in-seconds: 2
+    serviceUrl:
+      defaultZone: http://localhost:7001/eureka/
+
+  instance:                                #指定一个instance-id因为服务之间调用都是通过 instance-id来调用的
+    #hostname:eureka1                       #可以通过hostname指定（同一局域网下可以这样设置，在类似上线的大网是不能用的，可能会出现重复）,默认注册到服务中心
+    prefer-ip-address: true              # 启用ip前缀
+    ip-address: 127.0.0.1                 #设置前缀
+    instance-id: ${eureka.instance.ip-address}:${server.port}   # 设置注册服务中心显示的实例名称
+    #最小心跳续约，默认30s
+    lease-renewal-interval-in-seconds: 5
+    #90s内没有心跳 则认为该服务挂掉 默认时间90s
+    lease-expriation-duration-in-seconds: 10
+#  instance:
+#    instance-id: payment8001
+#    prefer-ip-address: true
+##    #eureka客户端发送心跳的时间间隔，默认30s
+##    lease-renewal-interval-in-seconds: 1
+##    #eureka服务端在收到最后一次心跳等待的时间上线，默认90s
+##    lease-expiration-duration-in-seconds: 2

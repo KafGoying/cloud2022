@@ -36,7 +36,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="payment" domainObjectName="PaymentDomain" mapperName="PaymentMapper" sqlProviderName="PaymentSQL"
+        <table tableName="payment" domainObjectName="Payment" mapperName="PaymentMapper" sqlProviderName="PaymentSQL"
                enableInsert="true"
                enableSelectByPrimaryKey="true"
                enableSelectByExample="true"

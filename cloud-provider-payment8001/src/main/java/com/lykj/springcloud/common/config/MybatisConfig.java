@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -33,6 +34,7 @@ import java.util.Properties;
 @Configuration
 @MapperScan(basePackages = "com.lykj.springcloud.dao",
         sqlSessionTemplateRef = "accountCenterSqlSessionTemplate")
+//@ConfigurationProperties(prefix = "spring.datasource")
 public class MybatisConfig {
 
     private final static String MAPPER_LOCATIONS = "classpath*:mappers/*.xml";

@@ -2,7 +2,6 @@ package com.lykj.springcloud.controller;
 
 import com.lykj.springcloud.entities.CommonResult;
 import com.lykj.springcloud.entities.Payment;
-import com.lykj.springcloud.entities.PaymentDomain;
 import com.lykj.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +26,7 @@ public class PaymentController {
     private String serverPort;
 
     @PostMapping("/payment/create")
-    public CommonResult<Payment> create(@RequestBody PaymentDomain payment){
+    public CommonResult<Payment> create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
         log.info("*****插入结果："+result);
         // 判断是否插入成功
@@ -40,7 +39,7 @@ public class PaymentController {
 
     @GetMapping("/payment/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id")Long id){
-        PaymentDomain result = paymentService.getPaymentById(id);
+        Payment result = paymentService.getPaymentById(id);
         log.info("*****查询结果："+result);
         int a = 8/2;
         log.info(a+""+12345);
